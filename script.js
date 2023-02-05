@@ -14,7 +14,6 @@ async function fetchData(url) {
 
 async function getPeople() {
   const people = await fetchData(urlPeople);
-  console.log(people);
   people.results.forEach((person) => {
     const card = document.createElement('div');
     card.classList.add('card');
