@@ -18,7 +18,11 @@ async function getPeople() {
   people.results.forEach((person) => {
     const card = document.createElement('div');
     card.classList.add('card');
-    card.innerHTML = `<h3>${person.name}</h3> <p>Birth Year: ${person.birth_year}</p> <p>Hair Color: ${person.hair_color}</p> <p>Gender: ${person.gender}</p> <p><a href="#films">View Films</a></p>`;
+    card.innerHTML = `<h3>${person.name}</h3> 
+      <p>Birth Year: ${person.birth_year}</p> 
+      <p>Hair Color: ${person.hair_color}</p> 
+      <p>Gender: ${person.gender}</p> 
+      <p><a href="#films">View Films</a></p>`;
 
     card.addEventListener('click', async () => {
       filmsList.innerHTML = '';
@@ -26,7 +30,10 @@ async function getPeople() {
         const film = await fetchData(filmUrl);
         const filmCard = document.createElement('div');
         filmCard.classList.add('card');
-        filmCard.innerHTML = `<h3>${film.title}</h3> <p>Director: ${film.director}</p> <p>Producer: ${film.producer}</p> <p>Release Date: ${film.release_date}</p>`;
+        filmCard.innerHTML = `<h3>${film.title}</h3>
+            <p>Director: ${film.director}</p> 
+            <p>Producer: ${film.producer}</p> 
+            <p>Release Date: ${film.release_date}</p>`;
         filmsList.appendChild(filmCard);
       });
     });
@@ -39,7 +46,11 @@ async function getFilms() {
   films.results.forEach((film) => {
     const card = document.createElement('div');
     card.classList.add('card');
-    card.innerHTML = `<h3>${film.title}</h3> <p>Director: ${film.director}</p> <p>Producer: ${film.producer}</p> <p>Release Date: ${film.release_date}</p> <p><a href="#people">View Characters</a></p>`;
+    card.innerHTML = `<h3>${film.title}</h3>
+        <p>Director: ${film.director}</p>
+        <p>Producer: ${film.producer}</p>
+        <p>Release Date: ${film.release_date}</p>
+        <p><a href="#people">View Characters</a></p>`;
     filmsList.appendChild(card);
   });
 }
